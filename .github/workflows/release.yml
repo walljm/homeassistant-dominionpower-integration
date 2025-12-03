@@ -1,0 +1,46 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Update manifest version
+        run: |
+          python -c "
+          import json
+          with open('custom_components/dominion_energy/manifest.json', 'r') as f:
+              manifest = json.load(f)
+          manifest['version'] = '${{ steps.get_version.outputs.VERSION }}'
+          with open('custom_components/dominion_energy/manifest.json', 'w') as f:
+              json.dump(manifest, f, indent=2)
+          "
+
+      - name: Create release zip
+        run: |
+          cd custom_components
+          zip -r ../dominion_energy.zip dominion_energy
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: dominion_energy.zip

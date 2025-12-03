@@ -15,6 +15,16 @@
           "account_number": "Your Dominion Energy account number (found on your bill)"
         }
       },
+      "tfa": {
+        "title": "Two-Factor Authentication",
+        "description": "Dominion Energy has sent a verification code to your email. Please enter it below.",
+        "data": {
+          "tfa_code": "Verification Code"
+        },
+        "data_description": {
+          "tfa_code": "The verification code sent to your email by Dominion Energy"
+        }
+      },
       "reauth_confirm": {
         "title": "Reauthenticate Dominion Energy",
         "description": "Your Dominion Energy session has expired. Please re-enter your credentials.",
@@ -27,6 +37,8 @@
     "error": {
       "cannot_connect": "Failed to connect to Dominion Energy. Please try again later.",
       "invalid_auth": "Invalid credentials. Please check your email, password, and account number.",
+      "invalid_tfa_code": "Invalid verification code. Please check the code and try again.",
+      "tfa_timeout": "Verification code entry timed out. Please restart the setup.",
       "unknown": "An unexpected error occurred. Please try again."
     },
     "abort": {
@@ -59,6 +71,93 @@
       },
       "billing_period_end": {
         "name": "Billing Period End"
+      },
+      "solar_generation": {
+        "name": "Solar Generation"
+      },
+      "bill_due_date": {
+        "name": "Bill Due Date"
+      },
+      "previous_balance": {
+        "name": "Previous Balance"
+      },
+      "payment_received": {
+        "name": "Payment Received"
+      },
+      "remaining_balance": {
+        "name": "Remaining Balance"
+      },
+      "rate_category": {
+        "name": "Rate Category"
+      },
+      "today_consumption": {
+        "name": "Today's Consumption"
+      },
+      "today_generation": {
+        "name": "Today's Generation"
+      },
+      "today_net_usage": {
+        "name": "Today's Net Usage"
+      },
+      "total_amount_due": {
+        "name": "Total Amount Due"
+      },
+      "last_bill_amount": {
+        "name": "Last Bill Amount"
+      },
+      "last_bill_usage": {
+        "name": "Last Bill Usage"
+      },
+      "last_year_bill_amount": {
+        "name": "Last Year Bill Amount"
+      },
+      "last_year_usage": {
+        "name": "Last Year Usage"
+      },
+      "last_payment_date": {
+        "name": "Last Payment Date"
+      },
+      "last_payment_amount": {
+        "name": "Last Payment Amount"
+      },
+      "next_meter_read_date": {
+        "name": "Next Meter Read Date"
+      },
+      "auto_pay_enabled": {
+        "name": "Auto Pay"
+      },
+      "is_net_metering": {
+        "name": "Net Metering"
+      },
+      "is_ami_meter": {
+        "name": "Smart Meter (AMI)"
+      },
+      "daily_high_temp": {
+        "name": "Daily High Temperature"
+      },
+      "daily_low_temp": {
+        "name": "Daily Low Temperature"
+      },
+      "heating_degree_days": {
+        "name": "Heating Degree Days"
+      },
+      "cooling_degree_days": {
+        "name": "Cooling Degree Days"
+      },
+      "monthly_avg_temp": {
+        "name": "Monthly Average Temperature"
+      },
+      "meter_number": {
+        "name": "Meter Number"
+      },
+      "meter_id": {
+        "name": "Meter ID"
+      },
+      "meter_type": {
+        "name": "Meter Type"
+      },
+      "account_number_sensor": {
+        "name": "Account Number"
       }
     }
   }
